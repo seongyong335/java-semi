@@ -5,9 +5,11 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner sc = new Scanner(System.in);
+    //메뉴 번호 no는 0을 default로 정의
+    int no = 0;
+
     public void mainMenu(){
-        //메뉴 번호 no는 0을 default로 정의
-        int no = 0;
+
         String yn;
         //메뉴 선택 화면
         do {
@@ -26,6 +28,7 @@ public class Menu {
             System.out.println("12. 프로그램 종료");
             System.out.print("메뉴 번호 입력 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : subVarMenu(); break;
@@ -46,13 +49,15 @@ public class Menu {
                     else if(yn.equals("n") || yn.equals("N")) no = 0;
                 default : no = 0;
             }
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
         } while (no == 0);
     }
 
     public void subVarMenu(){
 
         VariableSample vs = new VariableSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** 변수 테스트 부메뉴 ***\n");
@@ -61,20 +66,23 @@ public class Menu {
             System.out.println("3. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : vs.myProfile(); break;
                 case 2 : vs.empInformation(); break;
-                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 3);
     }
 
     public void subPTypeMenu(){
 
         PrimitiveTypeSample pts = new PrimitiveTypeSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** 기본자료형 테스트 부메뉴 ***\n");
@@ -82,19 +90,22 @@ public class Menu {
             System.out.println("2. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : pts.typeSize(); break;
-                case 2 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 2 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 2);
     }
 
     public void subIfMenu(){
 
         IfSample is = new IfSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** if문 테스트 부메뉴 ***\n");
@@ -109,6 +120,7 @@ public class Menu {
             System.out.println("9. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : is.maxNumber(); break;
@@ -119,16 +131,18 @@ public class Menu {
                 case 6 : is.scoreGrade(); break;
                 case 7 : is.checkPlusMinusZero(); break;
                 case 8 : is.whatCaracter(); break;
-                case 9 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 9 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 9);
     }
 
     public void subSwitchMenu(){
 
         SwitchSample ss = new SwitchSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** switch문 테스트 부메뉴 ***\n");
@@ -137,20 +151,23 @@ public class Menu {
             System.out.println("3. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : ss.calculator(); break;
                 case 2 : ss.fruitPrice(); break;
-                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 3);
     }
 
     public void subForMenu(){
 
         ForSample fs = new ForSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** for문 테스트 부메뉴 ***\n");
@@ -165,6 +182,7 @@ public class Menu {
             System.out.println("9. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : fs.sum1To10(); break;
@@ -175,16 +193,18 @@ public class Menu {
                 case 6 : fs.printNumberStar(); break;
                 case 7 : fs.printTriangleStar(); break;
                 case 8 : fs.guguDan(); break;
-                case 9 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 9 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 9);
     }
 
     public void subWhileMenu(){
 
         WhileSample ws = new WhileSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** while문 테스트 부메뉴 ***\n");
@@ -196,6 +216,7 @@ public class Menu {
             System.out.println("6. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : ws.printUniCode(); break;
@@ -203,16 +224,18 @@ public class Menu {
                 case 3 : ws.numberGame(); break;
                 case 4 : ws.countCharacter(); break;
                 case 5 : ws.countInChar(); break;
-                case 6 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 6 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 6);
     }
 
     public void subDoWhileMenu(){
 
         DoWhileSample dws = new DoWhileSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** do~while문 테스트 부메뉴 ***\n");
@@ -222,21 +245,24 @@ public class Menu {
             System.out.println("4. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : dws.addDashToken(); break;
                 case 2 : dws.burgerKingMenu(); break;
                 case 3 : dws.isStringAlphabet(); break;
-                case 4 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 4 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 4);
     }
 
     public void subBreakMenu(){
 
         BreakSample bs = new BreakSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** break문 테스트 부메뉴 ***\n");
@@ -245,20 +271,23 @@ public class Menu {
             System.out.println("3. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : bs.sumBreak(); break;
                 case 2 : bs.guguDanBreak(); break;
-                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 3);
     }
 
     public void subContinueMenu(){
 
         ContinueSample cs = new ContinueSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** continue문 테스트 부메뉴 ***\n");
@@ -267,20 +296,23 @@ public class Menu {
             System.out.println("3. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : cs.sumJumpThree(); break;
                 case 2 : cs.rowColJump(); break;
-                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 3);
     }
 
     public void subStaticMethodMenu(){
 
         StaticMethodSample sms = new StaticMethodSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** static 메소드 사용 테스트 부메뉴 ****\n");
@@ -290,21 +322,24 @@ public class Menu {
             System.out.println("4. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : sms.testMathRandom(); break;
                 case 2 : sms.testMathAbs(); break;
                 case 3 : sms.testMathMax(); break;
-                case 4 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 4 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 4);
     }
 
     public void subNonStaticMethodMenu(){
 
         NonStaticMethodSample nsms = new NonStaticMethodSample();
-        int no = 0;
+        no = 0;
 
         do {
             System.out.println("*** non-static 메소드 사용 테스트 부메뉴 ***\n");
@@ -313,13 +348,16 @@ public class Menu {
             System.out.println("3. 이전 메뉴로 가기");
             System.out.print("메뉴 선택 : ");
             no = sc.nextInt();
+            sc.nextLine();
 
             switch (no) {
                 case 1 : nsms.testScanner(); break;
                 case 2 : nsms.testRandom(); break;
-                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); mainMenu();
+                case 3 : System.out.println("메인 메뉴로 돌아갑니다."); no = 0; return;
                 default : no = 0;
             }
-        } while (no == 0);
+            if(no != 0) System.out.print("Enter를 눌러서 계속...");
+            sc.nextLine();
+        } while (no != 3);
     }
 }
