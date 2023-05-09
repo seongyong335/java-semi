@@ -107,7 +107,7 @@ public class ForSample {
         System.out.print("줄 : ");
         a = sc.nextInt();
 
-        if(a % 2 ==0) {
+        if(a > 0) {
             for(int i = 0; i < a; i++) {
                 String tmp = "";
                 for(int j = 0;  j <= i; j++) {
@@ -117,10 +117,10 @@ public class ForSample {
             }
         }
         else {
-            b = a;
-            for(int i = 0; i < a; i++){
+            b = Math.abs(a);
+            for(int i = 0; i < b; i++){
                 String tmp = "";
-                for(int j = a; j > i; j--){
+                for(int j = b; j > i; j--){
                     tmp += "*";
                 }
                 System.out.println(tmp);
