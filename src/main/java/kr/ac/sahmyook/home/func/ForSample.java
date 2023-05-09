@@ -52,8 +52,18 @@ public class ForSample {
         System.out.print("두번째 정수 : ");
         b = sc.nextInt();
 
-        if(a < b) for(int i = a; i <= b; i++) sum += i;
-        else if(b < a) for(int i = b; i <= a; i++) sum += i;
+        if(a < b) {
+            for(int i = a; i <= b; i++) {
+                sum += i;
+            }
+            System.out.println(sum);
+        }
+        else if(b < a) {
+            for(int i = b; i <= a; i++) {
+                sum += i;
+            }
+            System.out.println(sum);
+        }
         else System.out.println("두 수가 같거나 잘못 입력하셨습니다.");
     }
 

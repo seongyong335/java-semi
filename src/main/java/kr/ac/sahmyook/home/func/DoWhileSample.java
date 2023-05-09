@@ -64,7 +64,7 @@ public class DoWhileSample {
         if(bcWapper > 0) System.out.println("베이컨치즈와퍼 세트 - " + bcWapper);
         if(mWapper > 0) System.out.println("몬스터와퍼 세트 - " + mWapper);
         if(sWapper > 0) System.out.println("통새우와퍼 세트 - " + sWapper);
-        System.out.println("총액 : " + (qcWapper * 9700) + (bWapper * 9100) + (bcWapper * 9700) + (mWapper * 10300) + (sWapper * 9700) + "원");
+        System.out.println("총액 : " + ((qcWapper * 9700) + (bWapper * 9100) + (bcWapper * 9700) + (mWapper * 10300) + (sWapper * 9700)) + "원");
     }
 
     public void isStringAlphabet(){

@@ -25,9 +25,10 @@ public class WhileSample {
 
         while (a <= 100){
             sum += a;
+            a++;
         }
         System.out.println("*** 1~100까지의 합 ***");
-        System.out.println(a);
+        System.out.println(sum);
     }
 
     public void numberGame(){
@@ -36,15 +37,14 @@ public class WhileSample {
         int b = 0;
 
         System.out.println("*** 1~100 사이 랜덤 정수 맞추기 ***");
-        System.out.print("답 : ");
-        b = sc.nextInt();
 
-        while (b == a){
+        while (b != a){
+            System.out.print("답 : ");
+            b = sc.nextInt();
             if(b > a) System.out.println("언더");
             else if(b < a) System.out.println("오버");
-            else if(b == a) System.out.println("정답!");
-
         }
+        System.out.println("정답!");
     }
 
     public void countCharacter(){
@@ -53,7 +53,10 @@ public class WhileSample {
         int i = 0;
         int c = 0;
 
-        System.out.println("*** 문자의 갯수 ***");
+        System.out.println("*** 영문자의 갯수 ***");
+        System.out.print("자동으로 시작이 안되면 Enter를 눌러주세요");
+        sc.nextLine();  //nextLine으로 입력 받다보니 이러지 않으면 버퍼에 남아있는 찌꺼기때문에 가끔 그냥 끝나버림.
+        System.out.println();
         System.out.print("문자열 입력 : ");
         tmp = sc.nextLine();
 

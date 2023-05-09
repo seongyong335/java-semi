@@ -55,17 +55,17 @@ public class IfSample {
         c = sc.nextInt();
 
         System.out.println("*** 셋 중 작은 값 출력하기 ***");
-        if(a > b) {
+        if(a > b && a > c) {
             System.out.println("가장 큰 값 : " + a);
             if (b > c) System.out.println("가장 작은 값 : " + c);
             else System.out.println("가장 작은 값 : " + b);
         }
-        else if(a < b) {
+        else if(a < b && c < b) {
             System.out.println("가장 큰 값 : " + b);
             if (a > c) System.out.println("가장 작은 값 : " + c);
             else System.out.println("가장 작은 값 : " + a);
         }
-        else if(c > b) {
+        else if(c > b && c > a) {
             System.out.println("가장 큰 값 : " + c);
             if (b > a) System.out.println("가장 작은 값 : " + a);
             else System.out.println("가장 작은 값 : " + b);

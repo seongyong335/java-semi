@@ -49,8 +49,10 @@ public class Menu {
                     else if(yn.equals("n") || yn.equals("N")) no = 0;
                 default : no = 0;
             }
-            if(no != 0) System.out.print("Enter를 눌러서 계속...");
-            sc.nextLine();
+            if(no != 0) {
+                System.out.print("Enter를 눌러서 계속...");
+                sc.nextLine();
+            }
         } while (no == 0);
     }
 
